@@ -29,7 +29,7 @@ class AboutPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     color: const Color(0xFF4d2963),
                     child: const Text(
-                      'PLACEHOLDER HEADER TEXT',
+                      'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF! COME GRAB YOURS WHILE STOCK LASTS!',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
@@ -130,7 +130,19 @@ class AboutPage extends StatelessWidget {
               ),
             ),
 
-            
+            // Main content
+            Container(
+              width: double.infinity,
+              color: Colors.white,
+              padding: const EdgeInsets.all(24),
+              child: const Text(
+                'About Us\n\n\nWelcome to the Union Shop!\n\n We are dedicated to giving you the very best University branded products, with a range of clothing and merchandise available to shop all year round!\n\nAll online purchases are available for delivery or in store collection!\n\nWe hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don\'t hesitate to contact us.\n\nThank you for shopping with the Union Shop!',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
+              ),
+            ),
 
             // Footer
             Container(
@@ -138,7 +150,7 @@ class AboutPage extends StatelessWidget {
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
               child: const Text(
-                'Placeholder Footer',
+                'Opening Hours: \nTerm time \n\nMonday-Friday: 10am - 4pm \n\nOutside of term time \n\nMonday - Friday: 10am - 3pm \n\nPurchase online 24/7 \n\nHelp and info: \n\nAbout us \n\nSearch \n\nTerms & conditions of sale policy',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
