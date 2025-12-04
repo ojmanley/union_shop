@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     color: const Color(0xFF4d2963),
                     child: const Text(
-                      'PLACEHOLDER HEADER TEXT',
+                      'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF! COME GRAB YOURS WHILE STOCK LASTS!',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
@@ -193,7 +193,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const Text(
-                          'Placeholder Hero Title',
+                          'Essential range - now 20% off!',
                           style: TextStyle(
                             fontSize: 32,
                             fontWeight: FontWeight.bold,
@@ -203,7 +203,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         const Text(
-                          "This is placeholder text for the hero section.",
+                          "Over 20% off our essential range. Come and grab yours while stocks last!",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
@@ -294,7 +294,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
               child: const Text(
-                'Placeholder Footer',
+                'Opening Hours: \nTerm time \n\nMonday-Friday: 10am - 4pm \n\nOutside of term time \n\nMonday - Friday: 10am - 3pm \n\nPurchase online 24/7 \n\nHelp and info: \n\nSearch \n\nTerms & conditions of sale policy',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
