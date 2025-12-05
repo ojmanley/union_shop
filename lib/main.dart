@@ -389,28 +389,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisSpacing: 48,
                       children: const [
                         ProductCard(
-                          title: 'Placeholder Product 1',
-                          price: '£10.00',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                        ProductCard(
-                          title: 'Placeholder Product 2',
+                          title: 'Winter hoodie',
                           price: '£15.00',
                           imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                              'https://media.istockphoto.com/id/1177415728/photo/mens-black-blank-hoodie-template-from-two-sides-natural-shape-on-invisible-mannequin-for-your.jpg?s=612x612&w=0&k=20&c=z6Wid_C4aXNwqMX-6z-Z17eVBHpQZRnQF-SgnrP6pig=',
                         ),
                         ProductCard(
-                          title: 'Placeholder Product 3',
+                          title: 'Winter socks',
+                          price: '£15.00',
+                          imageUrl:
+                              'https://media.istockphoto.com/id/1281269245/photo/winter-day-by-fireplace.jpg?s=612x612&w=0&k=20&c=ewJqukiR6APFc6OIFM7HmKFyJ6MrtMbNwLd3TVgqmGM=',
+                        ),
+                        ProductCard(
+                          title: 'Winter coat',
                           price: '£20.00',
                           imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                              'https://media.istockphoto.com/id/182188051/photo/a-light-blue-winter-jacket-with-hood.jpg?s=612x612&w=0&k=20&c=ywUbJ6kRzppHfXgytC0_mBjWJmchtfKCNeKrSAOCJ10=',
                         ),
                         ProductCard(
-                          title: 'Placeholder Product 4',
+                          title: 'Winter boots',
                           price: '£25.00',
                           imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                              'https://media.istockphoto.com/id/155329872/photo/heavy-snow-boots.jpg?s=612x612&w=0&k=20&c=yrky8UoOArNafonsor6Xo0HkzCMw1iyF7P3x54D9seA=',
                         ),
                       ],
                     ),
