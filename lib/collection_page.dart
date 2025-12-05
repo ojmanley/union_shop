@@ -1,19 +1,117 @@
 import 'package:flutter/material.dart';
 
-class CollectionPage extends StatelessWidget {
+class CollectionPage extends StatefulWidget {
   const CollectionPage({Key? key}) : super(key: key);
+
+  @override
+  State<CollectionPage> createState() => _CollectionPageState();
+}
+
+class _CollectionPageState extends State<CollectionPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+  }
+
+  void navigateToProduct(BuildContext context) {
+    Navigator.pushNamed(context, '/product');
+  }
+
+  void navigateToAbout(BuildContext context) {
+    Navigator.pushNamed(context, '/about');
+  }
+
+  void navigateToCollections(BuildContext context) {
+    Navigator.pushNamed(context, '/collections');
+  }
+
+  void navigateToCollection(BuildContext context) {
+    Navigator.pushNamed(context, '/collection');
+  }
+
+  void navigateToSale(BuildContext context) {
+    Navigator.pushNamed(context, '/sale');
+  }
+
+  void navigateToSignin(BuildContext context) {
+    Navigator.pushNamed(context, '/signin');
   }
 
   void placeholderCallbackForButtons() {
     // This is the event handler for buttons that don't work yet
   }
 
+  void openDrawer() {
+    _scaffoldKey.currentState?.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: const BoxDecoration(
+                color: Color(0xFF4d2963),
+              ),
+              child: const Text(
+                'Menu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToHome(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Products'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToProduct(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Collections'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToCollections(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Sale'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToSale(context);
+              },
+            ),
+            ListTile(
+              title: const Text('About'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToAbout(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Sign In'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToSignin(context);
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -117,7 +215,7 @@ class CollectionPage extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: openDrawer,
                                 ),
                               ],
                             ),
