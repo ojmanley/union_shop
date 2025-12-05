@@ -245,7 +245,7 @@ class _AboutPageState extends State<CartPage> {
               color: Colors.white,
               padding: const EdgeInsets.all(24),
               child: const Text(
-                'About Us\n\n\nWelcome to the Union Shop!\n\n We are dedicated to giving you the very best University branded products, with a range of clothing and merchandise available to shop all year round!\n\nAll online purchases are available for delivery or in store collection!\n\nWe hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don\'t hesitate to contact us.\n\nThank you for shopping with the Union Shop!',
+                'Cart Page',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 18,
