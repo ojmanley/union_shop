@@ -42,6 +42,10 @@ class _AboutPageState extends State<AboutPage> {
     Navigator.pushNamed(context, '/cart');
   }
 
+  void navigateToPrintShack(BuildContext context) {
+    Navigator.pushNamed(context, '/printshack');
+  }
+
   void placeholderCallbackForButtons() {
     // This is the event handler for buttons that don't work yet
   }
@@ -118,6 +122,13 @@ class _AboutPageState extends State<AboutPage> {
               onTap: () {
                 Navigator.pop(context);
                 navigateToCart(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Print Shack'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToPrintShack(context);
               },
             ),
           ],

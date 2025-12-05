@@ -6,6 +6,7 @@ import 'package:union_shop/collection_page.dart';
 import 'package:union_shop/sale_page.dart';
 import 'package:union_shop/signin_page.dart';
 import 'package:union_shop/cart_page.dart';
+import 'package:union_shop/printshack_page.dart';
 void main() {
   runApp(const UnionShopApp());
 }
@@ -34,6 +35,7 @@ class UnionShopApp extends StatelessWidget {
         '/sale': (context) => const SalePage(),
         '/signin': (context) => const SigninPage(),
         '/cart': (context) => const CartPage(),
+        '/printshack': (context) => const PrintShackPage(),
       },
     );
   }
@@ -79,6 +81,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void navigateToCart(BuildContext context) {
     Navigator.pushNamed(context, '/cart');
+  }
+
+  void navigateToPrintShack(BuildContext context) {
+    Navigator.pushNamed(context, '/printshack');
   }
 
   void placeholderCallbackForButtons() {
@@ -158,7 +164,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.pop(context);
                 navigateToCart(context);
               },
-            )
+            ),
+            ListTile(
+              title: const Text('Print Shack'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToPrintShack(context);
+              },
+            ),
           ],
         ),
       ),

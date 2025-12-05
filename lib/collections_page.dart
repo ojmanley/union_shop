@@ -42,6 +42,10 @@ class _CollectionsPageState extends State<CollectionsPage> {
     Navigator.pushNamed(context, '/cart');
   }
 
+  void navigateToPrintShack(BuildContext context) {
+    Navigator.pushNamed(context, '/printshack');
+  }
+
   void placeholderCallbackForButtons() {
     // This is the event handler for buttons that don't work yet
   }
@@ -118,6 +122,13 @@ class _CollectionsPageState extends State<CollectionsPage> {
               onTap: () {
                 Navigator.pop(context);
                 navigateToCart(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Print Shack'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToPrintShack(context);
               },
             ),
           ],
@@ -339,7 +350,7 @@ class CollectionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/product');
+        Navigator.pushNamed(context, '/collection');
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
