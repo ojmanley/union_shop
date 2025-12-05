@@ -38,6 +38,10 @@ class _ProductPageState extends State<ProductPage> {
     Navigator.pushNamed(context, '/signin');
   }
 
+  void navigateToCart(BuildContext context) {
+    Navigator.pushNamed(context, '/cart');
+  }
+
   void placeholderCallbackForButtons() {
     // This is the event handler for buttons that don't work yet
   }
@@ -107,6 +111,13 @@ class _ProductPageState extends State<ProductPage> {
               onTap: () {
                 Navigator.pop(context);
                 navigateToSignin(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Cart'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToCart(context);
               },
             ),
           ],

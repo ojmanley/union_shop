@@ -5,7 +5,7 @@ import 'package:union_shop/collections_page.dart';
 import 'package:union_shop/collection_page.dart';
 import 'package:union_shop/sale_page.dart';
 import 'package:union_shop/signin_page.dart';
-
+import 'package:union_shop/cart_page.dart';
 void main() {
   runApp(const UnionShopApp());
 }
@@ -32,7 +32,8 @@ class UnionShopApp extends StatelessWidget {
         '/collections': (context) => const CollectionsPage(),
         '/collection': (context) => const CollectionPage(),
         '/sale': (context) => const SalePage(),
-        '/signin': (context) => const SigninPage()
+        '/signin': (context) => const SigninPage(),
+        '/cart': (context) => const CartPage(),
       },
     );
   }
@@ -74,6 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void navigateToSignin(BuildContext context) {
     Navigator.pushNamed(context, '/signin');
+  }
+
+  void navigateToCart(BuildContext context) {
+    Navigator.pushNamed(context, '/cart');
   }
 
   void placeholderCallbackForButtons() {
@@ -147,6 +152,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 navigateToSignin(context);
               },
             ),
+            ListTile(
+              title: const Text('Cart'),
+              onTap: () {
+                Navigator.pop(context);
+                navigateToCart(context);
+              },
+            )
           ],
         ),
       ),
