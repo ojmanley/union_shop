@@ -1,56 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:union_shop/product_page.dart';
-import 'package:union_shop/about_page.dart';
-import 'package:union_shop/collections_page.dart';
-import 'package:union_shop/collection_page.dart';
-import 'package:union_shop/'
 
-void main() {
-  runApp(const UnionShopApp());
-}
-
-class UnionShopApp extends StatelessWidget {
-  const UnionShopApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Union Shop',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4d2963)),
-      ),
-      home: const HomeScreen(),
-      // By default, the app starts at the '/' route, which is the HomeScreen
-      initialRoute: '/',
-      // When navigating to '/product', build and return the ProductPage
-      // In your browser, try this link: http://localhost:49856/#/product
-      routes: {'/product': (context) => const ProductPage(), '/about': (context) => const AboutPage(), '/collections': (context) => const CollectionsPage(), '/collection': (context) => const CollectionPage()},
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class SalePage extends StatelessWidget {
+  const SalePage({Key? key}) : super(key: key);
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
-  }
-
-  void navigateToProduct(BuildContext context) {
-    Navigator.pushNamed(context, '/product');
-  }
-
-  void navigateToAbout(BuildContext context) {
-    Navigator.pushNamed(context, '/about');
-  }
-
-  void navigateToCollections(BuildContext context) {
-    Navigator.pushNamed(context, '/collections');
-  }
-
-  void navigateToCollection(BuildContext context) {
-    Navigator.pushNamed(context, '/collection');
   }
 
   void placeholderCallbackForButtons() {
@@ -176,76 +130,17 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            // Hero Section
-            SizedBox(
-              height: 400,
+            // Main content
+            Container(
               width: double.infinity,
-              child: Stack(
-                children: [
-                  // Background image
-                  Positioned.fill(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            'https://shop.upsu.net/cdn/shop/files/PortsmouthCityPostcard2_1024x1024@2x.jpg?v=1752232561',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.7),
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Content overlay
-                  Positioned(
-                    left: 24,
-                    right: 24,
-                    top: 80,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Essential range - now 20% off!',
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            height: 1.2,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        const Text(
-                          "Over 20% off our essential range. Come and grab yours while stocks last!",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            height: 1.5,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 32),
-                        ElevatedButton(
-                          onPressed: placeholderCallbackForButtons,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF4d2963),
-                            foregroundColor: Colors.white,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero,
-                            ),
-                          ),
-                          child: const Text(
-                            'BROWSE PRODUCTS',
-                            style: TextStyle(fontSize: 14, letterSpacing: 1),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              color: Colors.white,
+              padding: const EdgeInsets.all(24),
+              child: const Text(
+                'Winter Collection',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
               ),
             ),
 
@@ -274,28 +169,28 @@ class HomeScreen extends StatelessWidget {
                       mainAxisSpacing: 48,
                       children: const [
                         ProductCard(
-                          title: 'Placeholder Product 1',
-                          price: '£10.00',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                        ProductCard(
-                          title: 'Placeholder Product 2',
+                          title: 'winter hoodie',
                           price: '£15.00',
                           imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                              'https://media.istockphoto.com/id/1177415728/photo/mens-black-blank-hoodie-template-from-two-sides-natural-shape-on-invisible-mannequin-for-your.jpg?s=612x612&w=0&k=20&c=z6Wid_C4aXNwqMX-6z-Z17eVBHpQZRnQF-SgnrP6pig=',
                         ),
                         ProductCard(
-                          title: 'Placeholder Product 3',
+                          title: 'winter socks',
+                          price: '£15.00',
+                          imageUrl:
+                              'https://media.istockphoto.com/id/1281269245/photo/winter-day-by-fireplace.jpg?s=612x612&w=0&k=20&c=ewJqukiR6APFc6OIFM7HmKFyJ6MrtMbNwLd3TVgqmGM=',
+                        ),
+                        ProductCard(
+                          title: 'winter coat',
                           price: '£20.00',
                           imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                              'https://media.istockphoto.com/id/182188051/photo/a-light-blue-winter-jacket-with-hood.jpg?s=612x612&w=0&k=20&c=ywUbJ6kRzppHfXgytC0_mBjWJmchtfKCNeKrSAOCJ10=',
                         ),
                         ProductCard(
-                          title: 'Placeholder Product 4',
+                          title: 'winter boots',
                           price: '£25.00',
                           imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                              'https://media.istockphoto.com/id/155329872/photo/heavy-snow-boots.jpg?s=612x612&w=0&k=20&c=yrky8UoOArNafonsor6Xo0HkzCMw1iyF7P3x54D9seA=',
                         ),
                       ],
                     ),
@@ -310,7 +205,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
               child: const Text(
-                'Opening Hours: \nTerm time \n\nMonday-Friday: 10am - 4pm \n\nOutside of term time \n\nMonday - Friday: 10am - 3pm \n\nPurchase online 24/7 \n\nHelp and info: \n\nAbout us \n\nSearch \n\nTerms & conditions of sale policy',
+                'Opening Hours: \nTerm time \n\nMonday-Friday: 10am - 4pm \n\nOutside of term time \n\nMonday - Friday: 10am - 3pm \n\nPurchase online 24/7 \n\nHelp and info: \n\nAbout  \n\nSearch \n\nTerms & conditions of sale policy',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
@@ -323,6 +218,9 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+
+  
 }
 
 class ProductCard extends StatelessWidget {
