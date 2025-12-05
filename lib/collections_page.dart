@@ -55,10 +55,10 @@ class _CollectionsPageState extends State<CollectionsPage> {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0xFF4d2963),
               ),
-              child: const Text(
+              child: Text(
                 'Menu',
                 style: TextStyle(
                   color: Colors.white,
@@ -292,7 +292,6 @@ class _CollectionsPageState extends State<CollectionsPage> {
                 ),
               ),
             ),
-            
 
             // Footer
             Container(
@@ -358,7 +357,6 @@ class CollectionCard extends StatelessWidget {
                 maxLines: 2,
               ),
               const SizedBox(height: 4),
-              
             ],
           ),
         ],

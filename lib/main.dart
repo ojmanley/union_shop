@@ -26,7 +26,14 @@ class UnionShopApp extends StatelessWidget {
       initialRoute: '/',
       // When navigating to '/product', build and return the ProductPage
       // In your browser, try this link: http://localhost:49856/#/product
-      routes: {'/product': (context) => const ProductPage(), '/about': (context) => const AboutPage(), '/collections': (context) => const CollectionsPage(), '/collection': (context) => const CollectionPage(), '/sale': (context) => const SalePage(), '/signin': (context) => const SigninPage()},
+      routes: {
+        '/product': (context) => const ProductPage(),
+        '/about': (context) => const AboutPage(),
+        '/collections': (context) => const CollectionsPage(),
+        '/collection': (context) => const CollectionPage(),
+        '/sale': (context) => const SalePage(),
+        '/signin': (context) => const SigninPage()
+      },
     );
   }
 }
@@ -464,7 +471,3 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
-
-
-
-
