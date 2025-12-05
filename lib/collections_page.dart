@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key}) : super(key: key);
+class CollectionsPage extends StatelessWidget {
+  const CollectionsPage({Key? key}) : super(key: key);
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
@@ -150,7 +150,7 @@ class AboutPage extends StatelessWidget {
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
               child: const Text(
-                ''
+                'Opening Hours: \nTerm time \n\nMonday-Friday: 10am - 4pm \n\nOutside of term time \n\nMonday - Friday: 10am - 3pm \n\nPurchase online 24/7 \n\nHelp and info: \n\nAbout us \n\nSearch \n\nTerms & conditions of sale policy',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
@@ -164,5 +164,3 @@ class AboutPage extends StatelessWidget {
     );
   }
 }
-
- 
