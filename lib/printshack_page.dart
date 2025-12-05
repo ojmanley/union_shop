@@ -9,6 +9,16 @@ class PrintShackPage extends StatefulWidget {
 
 class _ProductPageState extends State<PrintShackPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  String _selectedTextLines = 'One Line';
+  final TextEditingController _textLine1Controller = TextEditingController();
+  final TextEditingController _textLine2Controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _textLine1Controller.dispose();
+    _textLine2Controller.dispose();
+    super.dispose();
+  }
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
@@ -300,7 +310,7 @@ class _ProductPageState extends State<PrintShackPage> {
 
                   // Product name
                   const Text(
-                    'Winter hoodie',
+                    'Personalised Hoodie',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -310,10 +320,72 @@ class _ProductPageState extends State<PrintShackPage> {
 
                   const SizedBox(height: 12),
 
-                  // Product price
+                  // Text lines dropdown
                   const Text(
-                    '£15.00',
+                    'Text Lines',
                     style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  DropdownButton<String>(
+                    value: _selectedTextLines,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        _selectedTextLines = newValue ?? 'One Line';
+                      });
+                    },
+                    items: <String>['One Line', 'Two Lines']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+
+                  const SizedBox(height: 24),
+
+                  // Text input fields
+                  const Text(
+                    'Hoodie Text',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: _textLine1Controller,
+                    decoration: InputDecoration(
+                      hintText: 'Enter text for line 1',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  ),
+                  if (_selectedTextLines == 'Two Lines') ...[
+                    const SizedBox(height: 12),
+                    TextField(
+                      controller: _textLine2Controller,
+                      decoration: InputDecoration(
+                        hintText: 'Enter text for line 2',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                  ],
+
+                  const SizedBox(height: 24),
+
+                  // Product price
+                  Text(
+                    _selectedTextLines == 'One Line' ? '£15.00' : '£20.00',
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF4d2963),
@@ -333,7 +405,7 @@ class _ProductPageState extends State<PrintShackPage> {
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'This winter hoodie is sure to keep you warm during the colder months!.',
+                    'This Personalised Hoodie is sure to keep you warm during the colder months!',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
