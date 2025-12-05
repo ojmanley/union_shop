@@ -150,7 +150,7 @@ class AboutPage extends StatelessWidget {
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
               child: const Text(
-                ''
+                'Opening Hours: \nTerm time \n\nMonday-Friday: 10am - 4pm \n\nOutside of term time \n\nMonday - Friday: 10am - 3pm \n\nPurchase online 24/7 \n\nHelp and info: \n\nAbout  \n\nSearch \n\nTerms & conditions of sale policy',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
