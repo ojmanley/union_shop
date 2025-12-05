@@ -190,7 +190,7 @@ class MyCustomForm extends StatelessWidget {
           child: TextFormField(
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
-              labelText: 'Enter your username',
+              labelText: 'Enter your university email',
             ),
           ),
         ),
