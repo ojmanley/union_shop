@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:union_shop/product_page.dart';
 import 'package:union_shop/about_page.dart';
 import 'package:union_shop/collections_page.dart';
+import 'package:union_shop/collection_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -23,7 +24,7 @@ class UnionShopApp extends StatelessWidget {
       initialRoute: '/',
       // When navigating to '/product', build and return the ProductPage
       // In your browser, try this link: http://localhost:49856/#/product
-      routes: {'/product': (context) => const ProductPage(), '/about': (context) => const AboutPage(), '/collections': (context) => const CollectionsPage()},
+      routes: {'/product': (context) => const ProductPage(), '/about': (context) => const AboutPage(), '/collections': (context) => const CollectionsPage(), '/collection': (context) => const CollectionPage()},
     );
   }
 }
@@ -45,6 +46,10 @@ class HomeScreen extends StatelessWidget {
 
   void navigateToCollections(BuildContext context) {
     Navigator.pushNamed(context, '/collections');
+  }
+
+  void navigateToCollection(BuildContext context) {
+    Navigator.pushNamed(context, '/collection');
   }
 
   void placeholderCallbackForButtons() {
