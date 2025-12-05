@@ -46,7 +46,6 @@ class _SigninPageState extends State<SigninPage> {
     _scaffoldKey.currentState?.openDrawer();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,10 +55,10 @@ class _SigninPageState extends State<SigninPage> {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0xFF4d2963),
               ),
-              child: const Text(
+              child: Text(
                 'Menu',
                 style: TextStyle(
                   color: Colors.white,
@@ -281,7 +280,7 @@ class MyCustomForm extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),         
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
