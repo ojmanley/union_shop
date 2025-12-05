@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class CollectionsPage extends StatelessWidget {
   const CollectionsPage({Key? key}) : super(key: key);
 
@@ -144,6 +145,58 @@ class CollectionsPage extends StatelessWidget {
               ),
             ),
 
+            // Products Section
+            Container(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Column(
+                  children: [
+                    const Text(
+                      'COLLECTION SECTION',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                    const SizedBox(height: 48),
+                    GridView.count(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      crossAxisCount:
+                          MediaQuery.of(context).size.width > 600 ? 2 : 1,
+                      crossAxisSpacing: 24,
+                      mainAxisSpacing: 48,
+                      children: const [
+                        CollectionCard(
+                          title: 'Spring collection',
+                          imageUrl:
+                              'https://media.istockphoto.com/id/1126841725/photo/spring-meadow.webp?b=1&s=612x612&w=0&k=20&c=eDz8nDhzjbiZE0aY94vyrCp2kKNU30vGNyhBWwduNKI=',
+                        ),
+                        CollectionCard(
+                          title: 'Summer collection',
+                          imageUrl:
+                              'https://media.istockphoto.com/id/1935590814/photo/summer-beach-bag-and-accessories-on-sandy-beach-and-sea.webp?b=1&s=612x612&w=0&k=20&c=CYKM7YZbd7A2ianMTRZnI1adErrqHbF9NX6GhfZacqw=',
+                        ),
+                        CollectionCard(
+                          title: 'Autumn collection',
+                          imageUrl:
+                              'https://media.istockphoto.com/id/1684876651/photo/vibrant-maple-tree-during-autumn-with-wooden-chairs-and-fallen-leaves.jpg?s=612x612&w=0&k=20&c=JXYlmlJ8RsaIzPjbXUWLxCnL2ZCQaZ-Lc9X17l99FOA=',
+                        ),
+                        CollectionCard(
+                          title: 'Winter collection',
+                          imageUrl:
+                              'https://media.istockphoto.com/id/460682111/photo/panorama-of-the-winter-sunrise-in-mountains.jpg?s=612x612&w=0&k=20&c=DYe99hLsrxeGCIFy-sYTCnQCBllnoPVn3digKa7-J9I=',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            
+
             // Footer
             Container(
               width: double.infinity,
@@ -160,6 +213,58 @@ class CollectionsPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CollectionCard extends StatelessWidget {
+  final String title;
+  final String imageUrl;
+
+  const CollectionCard({
+    super.key,
+    required this.title,
+    required this.imageUrl,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/product');
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Image.network(
+              imageUrl,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  color: Colors.grey[300],
+                  child: const Center(
+                    child: Icon(Icons.image_not_supported, color: Colors.grey),
+                  ),
+                );
+              },
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 4),
+              Text(
+                title,
+                style: const TextStyle(fontSize: 14, color: Colors.black),
+                maxLines: 2,
+              ),
+              const SizedBox(height: 4),
+              
+            ],
+          ),
+        ],
       ),
     );
   }
